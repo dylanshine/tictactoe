@@ -10,6 +10,7 @@
 		FC43541D1AE18C4A00883129 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC43541C1AE18C4A00883129 /* Foundation.framework */; };
 		FC4354201AE18C4A00883129 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC43541F1AE18C4A00883129 /* main.m */; };
 		FC4354241AE18C4A00883129 /* TicTacToe.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC4354231AE18C4A00883129 /* TicTacToe.1 */; };
+		FC43542C1AE18C7100883129 /* TicTacToe.m in Sources */ = {isa = PBXBuildFile; fileRef = FC43542B1AE18C7100883129 /* TicTacToe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		FC43541F1AE18C4A00883129 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC4354221AE18C4A00883129 /* TicTacToe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TicTacToe-Prefix.pch"; sourceTree = "<group>"; };
 		FC4354231AE18C4A00883129 /* TicTacToe.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TicTacToe.1; sourceTree = "<group>"; };
+		FC43542A1AE18C7100883129 /* TicTacToe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicTacToe.h; sourceTree = SOURCE_ROOT; };
+		FC43542B1AE18C7100883129 /* TicTacToe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicTacToe.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 		FC43541E1AE18C4A00883129 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				FC43542A1AE18C7100883129 /* TicTacToe.h */,
+				FC43542B1AE18C7100883129 /* TicTacToe.m */,
 				FC43541F1AE18C4A00883129 /* main.m */,
 				FC4354231AE18C4A00883129 /* TicTacToe.1 */,
 				FC4354211AE18C4A00883129 /* Supporting Files */,
@@ -139,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC43542C1AE18C7100883129 /* TicTacToe.m in Sources */,
 				FC4354201AE18C4A00883129 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
