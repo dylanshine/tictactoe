@@ -63,11 +63,47 @@
     }
 }
 
+
+-(BOOL) horitzonalWin {
+    for (int i = 0; i < 9; i += 3) {
+        if ([self.board[i] isEqual: self.turn] && [self.board[i + 1] isEqual: self.turn] && [self.board[i+2] isEqual: self.turn]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+-(BOOL) verticalWin {
+    for (int i = 0; i < 3; i++) {
+        if ([self.board[i] isEqual: self.turn] && [self.board[i+3] isEqual: self.turn] && [self.board[i+6] isEqual: self.turn]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+-(BOOL) diagonalWin {
+    if (([self.board[0] isEqual: self.turn] && [self.board[4] isEqual: self.turn] && [self.board[8] isEqual: self.turn]) || ([self.board[2] isEqual: self.turn] && [self.board[4] isEqual: self.turn] && [self.board[6] isEqual: self.turn])) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+
+-(void) checkWinner {
+    if ([self horitzonalWin] || [self verticalWin] || [self diagonalWin]) {
+        NSLog(@"%@ wins!", self.turn);
+        exit(0);
+    }
+}
+
 -(void) play {
     while (YES) {
         [self printBoard];
         [self changeTurn];
         [self makeMove];
+        [self checkWinner];
     }
 }
 
