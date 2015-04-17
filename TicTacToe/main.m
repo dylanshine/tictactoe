@@ -16,6 +16,9 @@ int main(int argc, const char * argv[])
         
         TicTacToe *game = [[TicTacToe alloc]init];
         
+        [game play];
+        
+        
     }
     return 0;
 }

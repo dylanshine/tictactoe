@@ -26,4 +26,14 @@
     return self;
 }
 
+-(void) printBoard {
+    NSLog(@"______\n|%@|%@|%@|\n______\n|%@|%@|%@|\n______\n|%@|%@|%@|\n______\n", [self.board objectAtIndex:0], [self.board objectAtIndex:1], [self.board objectAtIndex:2], [self.board objectAtIndex:3], [self.board objectAtIndex:4], [self.board objectAtIndex:5], [self.board objectAtIndex:6], [self.board objectAtIndex:7], [self.board objectAtIndex:8]);
+}
+
+-(void) play {
+    while (YES) {
+       [self printBoard];
+    }
+}
+
 @end

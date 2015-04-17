@@ -13,4 +13,5 @@
 @property (readonly) NSMutableArray *board;
 @property (readonly) NSString *turn;
 
+-(void) play;
 @end
