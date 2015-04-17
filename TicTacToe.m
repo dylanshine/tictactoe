@@ -57,8 +57,9 @@
     char choice[1];
     scanf("%s", choice);
     NSString *userInput = [NSString stringWithFormat:@"%s" , choice];
-    
-    if (![self tileChecker:userInput]) {
+    if ([[userInput lowercaseString]  isEqual: @"q"]) {
+        exit(0);
+    } else if (![self tileChecker:userInput]) {
         NSLog(@"Sorry, invalid tile.");
         [self makeMove];
     }
