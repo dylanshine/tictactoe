@@ -55,9 +55,9 @@
     NSLog(@"%@'s turn, what tile would you like to take (1-9)?", self.turn);
     char choice[1];
     scanf("%s", choice);
-    NSString *string = [NSString stringWithFormat:@"%s" , choice];
+    NSString *userInput = [NSString stringWithFormat:@"%s" , choice];
     
-    if (![self tileChecker:string]) {
+    if (![self tileChecker:userInput]) {
         NSLog(@"Sorry, invalid tile.");
         [self makeMove];
     }
