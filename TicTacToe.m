@@ -38,10 +38,36 @@
     }
 }
 
+-(BOOL) tileChecker:(NSString *)userInput {
+    int tileIndex = [userInput intValue] - 1;
+    if (![self.board containsObject:userInput] || [self.board[tileIndex] isEqual: @"X"] || [self.board[tileIndex] isEqual: @"O"]) {
+        return NO;
+    } else {
+        [self.board replaceObjectAtIndex:tileIndex withObject:self.turn];
+        return YES;
+    }
+    
+    
+}
+
+
+-(void) makeMove {
+    NSLog(@"%@'s turn, what tile would you like to take (1-9)?", self.turn);
+    char choice[1];
+    scanf("%s", choice);
+    NSString *string = [NSString stringWithFormat:@"%s" , choice];
+    
+    if (![self tileChecker:string]) {
+        NSLog(@"Sorry, invalid tile.");
+        [self makeMove];
+    }
+}
+
 -(void) play {
     while (YES) {
         [self printBoard];
         [self changeTurn];
+        [self makeMove];
     }
 }
 
