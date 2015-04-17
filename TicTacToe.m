@@ -91,18 +91,36 @@
     }
 }
 
+-(void) playAgain {
+    char choice[1];
+    scanf("%s", choice);
+    NSString *userInput = [NSString stringWithFormat:@"%s" , choice];
+    
+    if ([[userInput lowercaseString]  isEqual: @"y"]) {
+        self.board = [[NSMutableArray alloc]initWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", nil];
+        self.numOfTurns = 0;
+    } else if ([[userInput lowercaseString]  isEqual: @"n"]) {
+        exit(0);
+    } else {
+        NSLog(@"Invalid input, please try again.");
+        [self playAgain];
+    }
+}
+
 
 -(void) checkWinner {
     if ([self horitzonalWin] || [self verticalWin] || [self diagonalWin]) {
         NSLog(@"%@ wins!", self.turn);
-        exit(0);
+        NSLog(@"Would you like to play again? (y/n)");
+        [self playAgain];
     }
 }
 
 -(void) checkBoardFilled{
     if (self.numOfTurns == 9) {
         NSLog(@"It's a tie!");
-        exit(0);
+        NSLog(@"Would you like to play again? (y/n)");
+        [self playAgain];
     } else {
         self.numOfTurns += 1;
     }
