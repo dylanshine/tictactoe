@@ -15,7 +15,6 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         
         TicTacToe *game = [[TicTacToe alloc]init];
-        
         [game play];
         
         
