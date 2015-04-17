@@ -12,6 +12,7 @@
 
 @property (readonly) NSMutableArray *board;
 @property (readonly) NSString *turn;
+@property (readonly) int numOfTurns;
 
 -(void) play;
 @end

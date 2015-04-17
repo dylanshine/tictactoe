@@ -11,6 +11,7 @@
 
 @property NSMutableArray *board;
 @property NSString *turn;
+@property int numOfTurns;
 
 @end
 
@@ -98,12 +99,22 @@
     }
 }
 
+-(void) checkBoardFilled{
+    if (self.numOfTurns == 9) {
+        NSLog(@"It's a tie!");
+        exit(0);
+    } else {
+        self.numOfTurns += 1;
+    }
+}
+
 -(void) play {
     while (YES) {
         [self printBoard];
         [self changeTurn];
         [self makeMove];
         [self checkWinner];
+        [self checkBoardFilled];
     }
 }
 
