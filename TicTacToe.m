@@ -53,14 +53,14 @@
 
 
 -(void) makeMove {
-    NSLog(@"%@'s turn, what tile would you like to take (1-9)?", self.turn);
+    NSLog(@"\n%@'s turn, what tile would you like to take (1-9)?", self.turn);
     char choice[1];
     scanf("%s", choice);
     NSString *userInput = [NSString stringWithFormat:@"%s" , choice];
-    if ([[userInput lowercaseString]  isEqual: @"q"]) {
+    if([[userInput lowercaseString]  isEqual: @"q"]) {
         exit(0);
     } else if (![self tileChecker:userInput]) {
-        NSLog(@"Sorry, invalid tile.");
+        NSLog(@"\nSorry, invalid tile.");
         [self makeMove];
     }
 }
@@ -103,7 +103,7 @@
     } else if ([[userInput lowercaseString]  isEqual: @"n"]) {
         exit(0);
     } else {
-        NSLog(@"Invalid input, please try again.");
+        NSLog(@"\nInvalid input, please try again.");
         [self playAgain];
     }
 }
@@ -111,16 +111,16 @@
 
 -(void) checkWinner {
     if ([self horitzonalWin] || [self verticalWin] || [self diagonalWin]) {
-        NSLog(@"%@ wins!", self.turn);
-        NSLog(@"Would you like to play again? (y/n)");
+        NSLog(@"\n%@ wins!", self.turn);
+        NSLog(@"\nWould you like to play again? (y/n)");
         [self playAgain];
     }
 }
 
 -(void) checkBoardFilled{
     if (self.numOfTurns == 9) {
-        NSLog(@"It's a tie!");
-        NSLog(@"Would you like to play again? (y/n)");
+        NSLog(@"\nIt's a tie!");
+        NSLog(@"\nWould you like to play again? (y/n)");
         [self playAgain];
     } else {
         self.numOfTurns += 1;
